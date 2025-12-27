@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ThemeContext } from "./themeContext";
+import { ThemeContext } from "./ThemeContext";
 
 const THEMES = ["dark", "light", "blue"];
 
