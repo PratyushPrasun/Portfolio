@@ -78,7 +78,7 @@ useEffect(() => {
                   <p className="text-xs font-bold text-gray-400 uppercase flex items-center gap-2">
                     Email <Copy size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                   </p>
-                  <p className="text-gray-700 dark:text-white font-medium">ppratyush102@gmail.com</p>
+                  <p className="text-gray-700 dark:text-white font-medium">ppratyush1203@gmail.com</p>
                 </div>
                 {/* Tooltip */}
                 <AnimatePresence>
