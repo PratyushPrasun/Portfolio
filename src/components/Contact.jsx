@@ -56,7 +56,21 @@ useEffect(() => {
   const buttonHover = isBlue ? "hover:bg-blue-600 dark:hover:bg-blue-500" : "hover:bg-red-600 dark:hover:bg-red-500";
 
   return (
-    <section id="contact" className="relative py-4 overflow-hidden bg-white dark:bg-[#050505] transition-colors duration-500">
+        <section 
+  id="contact" 
+  className="relative py-4 overflow-hidden bg-white dark:bg-[#050505] transition-colors duration-500"
+  /* Add the style prop below */
+  style={{
+    background: isBlue
+      ? `linear-gradient(
+          120deg,
+          var(--blue-bg-from),
+          var(--blue-bg-via),
+          var(--blue-bg-to)
+        )`
+      : undefined,
+  }}
+>
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           
