@@ -1,0 +1,116 @@
+/* src/index.css */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* optional: make it global */
+body {
+  font-family: "Open Sans", sans-serif;
+}
+@keyframes border-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50%{
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-border {
+  animation: border-spin 3.5s linear infinite;
+}
+/* *{
+  cursor: none;
+} */
+.contact-input {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: transparent;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: white;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.contact-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.contact-input:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.4);
+}
+/* =========================
+   BLUE THEME – SAFE OVERRIDES
+   ========================= */
+
+html[data-theme="blue"] {
+  --blue-accent: #1d49a9;
+  --blue-accent-soft: rgba(37, 99, 235, 0.25);
+}
+
+/* Accent text */
+html[data-theme="blue"] .accent {
+  color: var(--blue-accent);
+}
+
+/* Accent background */
+html[data-theme="blue"] .accent-bg {
+  background-color: var(--blue-accent);
+}
+
+/* Accent border */
+html[data-theme="blue"] .accent-border {
+  border-color: var(--blue-accent);
+}
+
+/* Soft glow */
+html[data-theme="blue"] .accent-glow {
+  box-shadow: 0 0 25px var(--blue-accent-soft);
+}
+html[data-theme="blue"] {
+  /* Lighter premium blue gradient */
+  --blue-bg-from: #1f2848;   /* softened navy */
+  --blue-bg-via:  #0a1a4f;   /* rich blue */
+  --blue-bg-to:   #0f2a7a;   /* brighter royal blue */
+
+  /* Softer, cleaner glows */
+  --blue-accent-soft: rgba(114, 158, 229, 0.28);
+  --blue-glow-strong: rgba(107, 168, 242, 0.20);
+}
+
+/* index.css */
+
+/* 1. Use a more sophisticated 'Quint' timing function */
+* {
+  transition: background-color 0.7s cubic-bezier(0.23, 1, 0.32, 1), 
+              color 0.5s cubic-bezier(0.23, 1, 0.32, 1), 
+              border-color 0.5s cubic-bezier(0.23, 1, 0.32, 1) !important;
+}
+
+/* 2. The 'Ignition' Flash */
+.theme-ignition {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  background-color: white; /* Default flash */
+}
+
+/* We animate ONLY the opacity to prevent the 'blank screen' feel */
+.theme-ignition.active {
+  animation: ignition-flash 0.6s ease-out forwards;
+}
+
+@keyframes ignition-flash {
+  0% { opacity: 0; }
+  20% { opacity: 0.15; } /* Very subtle flash, not a full white-out */
+  100% { opacity: 0; }
+}
