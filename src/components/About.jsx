@@ -104,8 +104,10 @@ export default function About() {
 
             </p>
 
-            <a href="public\Pratyush.pdf"
-            download
+            <a href="/Pratyush.pdf"
+  download
+  target="_blank"
+  rel="noopener noreferrer"
             ><motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
